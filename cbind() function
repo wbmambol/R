@@ -1,0 +1,4 @@
+# add a column or multiple columns to a matrix with the cbind() function, which merges matrices and/or vectors together by column.
+
+# Bind the new variable worldwide_vector as a column to star_wars_matrix
+all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
