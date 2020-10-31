@@ -1,0 +1,31 @@
+# The linkedin vector has already been defined for you
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+
+# Loop version 1
+for (k in linkedin){
+    print(k)
+}
+
+
+# Loop version 2
+for (i in 1:length(linkedin)) {
+    print(linkedin[i])
+}
+
+NEW - - - - - - - - - - - - - - - - 
+ - - - - - - - - - - - - - - - - Loop over a list - - - - - - - - - - - - - - - - 
+ # The nyc list is already specified
+nyc <- list(pop = 8405837, 
+            boroughs = c("Manhattan", "Bronx", "Brooklyn", "Queens", "Staten Island"), 
+            capital = FALSE)
+
+# Loop version 1
+for (p in nyc) {
+    print(p)
+}
+
+
+
+# Loop version 2
+for (i in 1:length(nyc))
+print(nyc[[i]])
