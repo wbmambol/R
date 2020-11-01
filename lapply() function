@@ -69,3 +69,23 @@ sapply(temp, extremes)
 
 # Apply extremes() over temp with lapply()
 l <- lapply(temp, extremes)
+
+NEW - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+ - - - - - - - - - - - - - -When output length differs - - - - - - - - - - - - - -
+# temp is already prepared for you in the workspace
+
+# Definition of below_zero()
+below_zero <- function(x) {
+  return(x[x < 0])
+}
+
+# Apply below_zero over temp using sapply(): freezing_s
+freezing_s <- sapply(temp, below_zero)
+
+# Apply below_zero over temp using lapply(): freezing_l
+#Given that the length of the output of below_zero() changes for different input vectors, sapply() is not able to nicely convert the output of lapply() to a nicely formatted matrix. Instead, the output values of sapply() and lapply() are exactly the same, as shown by the TRUE output of identical()
+freezing_l <- lapply(temp, below_zero)
+
+# Are freezing_s and freezing_l identical?
+#Compare using the identical() function.
+identical(freezing_s, freezing_l)
