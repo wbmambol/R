@@ -1,0 +1,23 @@
+# sapply() does not simplify the list of NULL's. That's because 
+the 'vector-version' of a list of NULL's would simply be a NULL, 
+which is no longer a vector with the same length as the input. 
+
+
+# Definition of print_info() function
+print_info <- function(x) {
+  cat("The average temperature is", mean(x), "\n")
+}
+
+# Apply print_info() over temp using sapply()
+sapply(temp, print_info)
+
+# Apply print_info() over temp using lapply()
+lapply(temp, print_info)
+
+- - - - - - - - - - - - - - - - - -Reverse Engineer SAPPLY () function - - - - - - - - - - - - - - - - - -
+sapply(list(runif (10), runif (10)), 
+       function(x) c(min = min(x), mean = mean(x), max = max(x)))
+       
+    True that: 
+    a.) (2) This code generates a matrix with 3 rows and 2 columns.
+    b.) (3) The function that is used inside sapply() is anonymous.
