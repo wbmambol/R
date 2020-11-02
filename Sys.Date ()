@@ -1,0 +1,56 @@
+# Get the current date: today
+today <- Sys.Date()
+
+# See what today looks like under the hood
+unclass(today)
+
+# Get the current time: now
+now <- Sys.time()
+
+# See what now looks like under the hood
+unclass(now)
+
+
+NEW - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+- - - - - - - - - - - - -create dates and times from character strings.- - - - - - - - - - - - -
+ as.Date() function
+ 
+ today <- Sys.Date()
+format(Sys.Date(), format = "%d %B, %Y")
+format(Sys.Date(), format = "Today is a %A!")
+
+%Y: 4-digit year (1982)
+%y: 2-digit year (82)
+%m: 2-digit month (01)
+%d: 2-digit day of the month (13)
+%A: weekday (Wednesday)
+%a: abbreviated weekday (Wed)
+%B: month (January)
+%b: abbreviated month (Jan)
+
+ # as.POSIXct() to convert from a character string to a POSIXct object, and format() to convert from a POSIXct object to a character string.
+ symbols:  ?strptime
+
+%H: hours as a decimal number (00-23)
+%I: hours as a decimal number (01-12)
+%M: minutes as a decimal number
+%S: seconds as a decimal number
+%T: shorthand notation for the typical format %H:%M:%S
+%p: AM/PM indicator
+
+- - - - - - - - - - - - -Instructions - - - - - - - - - - - - -
+# Definition of character strings representing times
+str1 <- "May 23, '96 hours:23 minutes:01 seconds:45"
+str2 <- "2012-3-12 14:23:08"
+
+- - - - - - - - - - -Convert two strings that represent timestamps, str1 and str2, to POSIXct objects called time1 and time2.- - - - - - - - - - -
+# Convert the strings to POSIXct objects: time1, time2
+time1 <- as.POSIXct(str1, format = "%B %d, '%y hours:%H minutes:%M seconds:%S") == "1996-05-23 23:01:45 UTC"
+time2 <- as.POSIXct(str2, "%Y-%m-%d") == "2012-03-12 14:23:08"
+ #format(time2, "%Y-%m-%d")
+ 
+- - - - - Using format(), create a string from time1 containing only the minutes.
+- - - - - From time2, extract the hours and minutes as "hours:minutes AM/PM". Refer to the assignment text above to find the correct conversion symbols!- - - - - - - - - - -
+# Convert times to formatted strings
+format(time1, "%M") == "01"
+format(time2, "%I:%M %p") == "02:23 PM"
