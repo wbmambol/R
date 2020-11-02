@@ -1,0 +1,6 @@
+grepl(), which returns TRUE when a pattern is found in the corresponding character string.
+grep(), which returns a vector of indices of the character strings that contains the pattern.
+Both functions need a pattern and an x argument, where pattern is the regular expression you want to match for, and the x argument is the character vector from which matches should be sought.
+
+# Use sub() to convert the email domains to datacamp.edu
+sub(pattern="@.*\\.edu$", "@datacamp.edu", x=emails)
