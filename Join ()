@@ -1,0 +1,4 @@
+- - - - - - Order of the tables does not matter
+# Combine the parts and inventory_parts tables
+inventory_parts %>%
+inner_join(parts, by = "part_num")
